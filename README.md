@@ -2,6 +2,9 @@
 
 Code is deployed on AWS EC2
 
+Download the code and run 'npm install'
+ then do 'npm start'.
+ 
 You can check using base URL : http://3.6.37.4:3001/
 
 API for getMatchById  http://3.6.37.4:3001/match/:id

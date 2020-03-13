@@ -13,7 +13,7 @@ app.patch('/updateMatch/:id', function(req, res) {
  db.get().query(`UPDATE generic_data_matches set ? where match_Id= ?`,[match,req.params.id],function(err,result){
   if(err){
     console.log(err)
-    res.status(422).send({error: 'No user found.'});
+    res.status(422).send({error: 'No match found.'});
   }
   res.send('Updated')
  })
@@ -25,7 +25,7 @@ app.post('/getMatch', function(req, res) {
   db.get().query('SELECT * FROM generic_data_matches WHERE matchdate_gmt >= ? AND matchdate_gmt <= ? ', [startDate,endDate], function(err, rows) {
       if(err){
         console.log(err)
-        res.status(422).send({error: 'No user found.'});
+        res.status(422).send({error: 'No match found.'});
       }
       // var foundUser = rows[0];
       res.send(rows);
@@ -37,7 +37,7 @@ app.get('/match/:id', function(req, res){
     db.get().query('SELECT * FROM generic_data_matches WHERE match_Id = ? ', [id], function(err, rows) {
         if(err){
           console.log(err)
-          res.status(422).send({error: 'No user found.'});
+          res.status(422).send({error: 'No match found.'});
         }
         // var foundUser = rows[0];
         res.send(rows);
